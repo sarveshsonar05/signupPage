@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+
+    <style>
+        body {
+            background: linear-gradient(rgba(55, 55, 55, .5), rgba(55, 55, 55, .5)), url("images/2.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .box {
+            /* #e2e2e2, #C9D6FF, */
+            margin: 50px;
+            margin-top: 8%;
+            margin-left: 20%;
+            height: 60%;
+            width: 30%;
+            /* background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  */
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(rgba(238, 250, 255, 0.5), rgba(238, 250, 255, 0.5));
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 5px 5px 20px 2px rgb(133, 142, 146);
+            text-align: center;
+        }
+
+        .box img {
+            height: 200px;
+            width: 250px;
+            margin: 10px;
+            padding: 20px;
+        }
+
+        .box input {
+            border-bottom: 1px solid white;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            background: transparent;
+            outline: white;
+        }
+
+        .box input:focus {
+            background: transparent;
+            outline: none;
+            border: none;
+        }
+        ::placeholder{
+            color: rgb(255, 255, 255);
+      
+}
+
+        .row {
+            margin: auto;
+        }
+
+        .btn {
+            background-color: #67e7ee;
+            margin: auto;
+
+        }
+
+        .btn:hover {
+            background-color: #34dee7;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="box">
+            <h1>Sign Up Here</h1>
+            <img src="images/3.png" alt="">
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <input type="text" id="fullName" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm" placeholder="Enter Full Name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <input type="email" id="email" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm" placeholder="Enter Email">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <input type="text" id="username" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm" placeholder="Enter UserName">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <input type="password" id="password" class="form-control" aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-sm" placeholder="Enter PassWord">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn" onclick="submit()">Submit</button>
+            </div>
+
+        </div>
+
+
+        <script>
+            var fullname;
+            var Email;
+            var UserName;
+            var passWord;
+
+
+            function submit() {
+                fullname = $("#fullName").val();
+                Email = $("#email").val();
+                UserName = $("#username").val();
+                passWord = $("#password").val();
+
+
+                if (isEmpty()) {
+                    if (passWord.length <= 7) {
+                        alert("password must be minimum 8 character");
+                    }
+                } else {
+                    alert("Enter all fields !!!");
+
+                }
+
+
+            }
+
+            function isEmpty() {
+                if (fullname == "" || Email == "" || UserName == "" || passWord == "") {
+                    return false
+
+                } else {
+                    return true
+                }
+            }
+
+
+        </script>
+</body>
+
+</html>
